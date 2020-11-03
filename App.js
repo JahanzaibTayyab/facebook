@@ -8,12 +8,14 @@
 
 import React from 'react'
 import { View, Text } from 'react-native'
+import HomeContainer from './app/screens/Home';
 
 import LoginScreen from "./app/screens/LoginScreen"
 
 function App() {
   return (
-    <LoginScreen />
+    // <LoginScreen />
+    <HomeContainer />
   )
 }
 

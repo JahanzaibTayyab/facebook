@@ -2,18 +2,18 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 import colors from "../../config/colors";
 
-const { height } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: "white",
+        justifyContent: "flex-end"
     },
     banner: {
-        flex: 1.7
+        flex: 0.7
     },
     content: {
-        flex: 3,
         marginHorizontal: 20
     },
     bannerImg: {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     WithoutBanner: {
         height: 72,
-        width: 73,
+        width: (width - 100) / 2,
         marginLeft: 120,
         marginTop: 40,
         marginBottom: 10
@@ -36,40 +36,43 @@ const styles = StyleSheet.create({
     },
     langText: { color: "#707276" },
     textInput: {
-        marginTop: 20
+        marginTop: 20,
+        marginHorizontal: 40,
     },
     formInput: {
-        height: 40,
         borderBottomColor: "#ECEAEC",
         borderBottomWidth: 1,
-        marginBottom: 10
+        marginBottom: 10,
+        height: 40,
+        fontSize: 18,
     },
     loginButton: {
-        marginTop: 10
+        justifyContent: 'center',
+        alignItems: "center"
     },
     textForgot: {
         marginTop: 20,
         textAlign: "center"
     },
     signOutButton: {
-        marginTop: 25,
-        marginHorizontal: 20,
         justifyContent: "center",
         alignItems: "center"
     },
     orTextContainer: {
         flexDirection: "row",
-        marginTop: 20
+        marginTop: 20,
+        marginHorizontal: 40,
     },
     orTextLine: {
-        width: "45%",
+        width: "44%",
         borderBottomWidth: 1,
+        marginBottom: 13,
         borderBottomColor: "#ddd"
     },
     orText: {
         width: "10%",
-        paddingLeft: 2,
-        marginBottom: -6
+        padding: 5,
+        color: colors.medium
     }
 });
 export default styles;
