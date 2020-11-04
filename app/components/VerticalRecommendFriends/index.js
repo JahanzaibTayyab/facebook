@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import VerticalRecommendItem from './VerticalRecommendItem'
 import ExTouchableOpacity from '../ExTouchableOpacity'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 
 class index extends Component {
     constructor(props) {

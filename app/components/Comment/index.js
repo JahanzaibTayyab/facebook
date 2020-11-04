@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
 import { View, Image, TouchableOpacity, Text, Dimensions, StyleSheet } from 'react-native'
 import ScaledImage from '../ScaledImage'
-
-export default function Comment({ comment }) {
-    return (
-        <View style={styles.container}>
-            <Image style={styles.avatar} source={{ uri: comment.avatar_url }}></Image>
-            <View style={styles.centerContainer}>
-                <View style={styles.contentContainer}>
-                    <TouchableOpacity><Text style={styles.name}>{comment.name}</Text></TouchableOpacity>
-                    <Text style={styles.content}>{comment.content}</Text>
-                </View>
-                <ScaledImage width={screenWidth * 0.7} style={styles.image} source={comment.image}></ScaledImage>
-                <View style={styles.toolContainer}>
-                    <Text style={styles.createAt}>{comment.create_at}</Text>
-                    <TouchableOpacity style={styles.likeBtn}><Text >Like</Text></TouchableOpacity>
-                    <TouchableOpacity style={styles.replyBtn}><Text>Reply</Text></TouchableOpacity>
+export default class Comment extends Component {
+    render() {
+        const { comment } = this.props
+        return (
+            <View style={styles.container}>
+                <Image style={styles.avatar} source={{ uri: comment.avatar_url }}></Image>
+                <View style={styles.centerContainer}>
+                    <View style={styles.contentContainer}>
+                        <TouchableOpacity><Text style={styles.name}>{comment.name}</Text></TouchableOpacity>
+                        <Text style={styles.content}>{comment.content}</Text>
+                    </View>
+                    <ScaledImage width={screenWidth * 0.7} style={styles.image} source={comment.image}></ScaledImage>
+                    <View style={styles.toolContainer}>
+                        <Text style={styles.createAt}>{comment.create_at}</Text>
+                        <TouchableOpacity style={styles.likeBtn}><Text >Like</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.replyBtn}><Text>Reply</Text></TouchableOpacity>
+                    </View>
                 </View>
             </View>
-        </View>
-    )
+        )
+    }
 }
-
 const screenWidth = Math.round(Dimensions.get('window').width);
 const styles = StyleSheet.create({
     container: {

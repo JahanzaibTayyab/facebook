@@ -3,7 +3,7 @@ import { Alert, View, Text, ScrollView, FlatList, StyleSheet } from 'react-nativ
 import axios from 'axios'
 import Story from './Story'
 import Axios from 'axios'
-import { FetchStoriesRequest } from '../../actions/storiesAction'
+import { FetchStoriesRequest } from '../../Redux/actions/storiesAction'
 import { connect } from 'react-redux'
 import StoryAdder from './Story/StoryAdder'
 class index extends Component {

@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native'
 import ScaledImage from '../ScaledImage'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { permission } from '../../constants'
 import VideoController from './VideoController'
 import { connect } from 'react-redux'
-import { SetFixedHeighWatchingVideo } from '../../actions/videoControlActions'
+import { SetFixedHeighWatchingVideo } from '../../Redux/actions/videoControlActions'
 class WatchItem extends Component {
     constructor(props) {
         super(props)

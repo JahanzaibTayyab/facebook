@@ -1,26 +1,31 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 import ExTouchableOpacity from '../ExTouchableOpacity'
-
-export default function GroupCategoryItem() {
-    function onPressCategoryItemHandler(props) {
-        const { category } = props
+export default class GroupCategoryItem extends Component {
+    constructor(props) {
+        super(props)
+    }
+    onPressCategoryItemHandler() {
+        const { category } = this.props
         navigation.push('GroupCategory', {
             category: category
         })
     }
-    const { category } = props
-    return (
-        <ExTouchableOpacity onPress={onPressCategoryItemHandler.bind(this)}>
-            <View style={styles.container}>
-                <Image source={{ uri: category.avatar_url }} style={styles.categoryAvatar}></Image>
-                <Text style={styles.categoryTxt}>{category.name}</Text>
-            </View>
-        </ExTouchableOpacity>
-    )
+    render() {
+        const { category } = this.props
+        return (
+            <ExTouchableOpacity onPress={this.onPressCategoryItemHandler.bind(this)}>
+                <View style={styles.container}>
+                    <Image source={{ uri: category.avatar_url }} style={styles.categoryAvatar}></Image>
+                    <Text style={styles.categoryTxt}>{category.name}</Text>
+                </View>
+            </ExTouchableOpacity>
+        )
+    }
 }
+
 const styles = StyleSheet.create({
     container: {
         height: 50,

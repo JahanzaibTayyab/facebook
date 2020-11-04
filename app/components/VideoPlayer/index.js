@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, TouchableOpacity, Animated } from 'react-native'
 import { connect, useSelector, useDispatch } from 'react-redux'
-import { SetCurrentWatchingPosition, SetThreadWatchingStatus } from '../../actions/watchVideosActions'
+import { SetCurrentWatchingPosition, SetThreadWatchingStatus } from '../../Redux/actions/watchVideosActions'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import { Video } from 'expo-av'
+// import { Video } from 'expo-av'
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '../../constants'
 import { PanGestureHandler, State, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 class VideoPlayer extends Component {

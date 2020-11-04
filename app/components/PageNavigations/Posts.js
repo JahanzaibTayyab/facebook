@@ -4,19 +4,21 @@ import PostTool from '../PostTool'
 import PagePostList from '../PagePostList'
 import { connect } from 'react-redux'
 
-function Posts() {
-    const { page, posts } = props
-    return (
-        <View>
-            <PostTool isWriteToPage={true} page={page} />
-            <View style={{ marginVertical: 5 }}></View>
-            <PagePostList pagePosts={posts} />
-        </View>
-    )
+class Posts extends Component {
+    render() {
+        const { page, posts } = this.props
+        return (
+            <View>
+                <PostTool isWriteToPage={true} page={page} />
+                <View style={{ marginVertical: 5 }}></View>
+                <PagePostList pagePosts={posts} />
+            </View>
+        )
+    }
 }
-const mapStateToProps = () => {
+const mapStateToProps = state => {
     return {
-        posts: page.posts
+        posts: state.page.posts
     }
 }
 export default connect(mapStateToProps, null)(Posts)

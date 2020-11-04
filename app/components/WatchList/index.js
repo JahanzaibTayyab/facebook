@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
 import WatchItem from './WatchItem'
 import { connect } from 'react-redux'
-import { FetchWatchVideosRequest } from '../../actions/watchVideosActions'
+import { FetchWatchVideosRequest } from '../../Redux/actions/watchVideosActions'
 class index extends Component {
     constructor(props) {
         super(props)

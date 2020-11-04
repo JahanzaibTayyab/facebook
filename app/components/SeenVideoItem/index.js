@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
-import { Video } from 'expo-av'
+//import { Video } from 'expo-av'
 import { SCREEN_WIDTH } from '../../constants'
 import ExTouchableOpacity from '../ExTouchableOpacity'
-import { navigate } from '../../rootNavigation'
+import { navigate } from '../../../rootNavigation'
 export default class index extends Component {
     constructor(props) {
         super(props)
@@ -20,7 +20,7 @@ export default class index extends Component {
         return (
             <ExTouchableOpacity onPress={this.onPressWatchVideoDetail.bind(this)} style={styles.container}>
                 <View style={styles.videoWrapper}>
-                    <Video
+                    {/* <Video
                         posterStyle={styles.posterStyle}
                         usePoster={true}
                         shouldPlay={false}
@@ -28,7 +28,7 @@ export default class index extends Component {
                         resizeMode="cover"
                         source={{ uri: video.video_url }}
                         style={styles.video}>
-                    </Video>
+                    </Video> */}
                     <View style={styles.seenLable}>
                         <Text style={{ color: '#fff' }}>Seen</Text>
                     </View>

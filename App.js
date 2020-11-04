@@ -1,71 +1,71 @@
 import * as React from 'react';
 import { Provider } from 'react-redux'
-import store from './store'
+import store from './app/Redux/store'
 import { NavigationContainer, useIsFocused } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Home from './screens/Home'
+import Home from './app/screens/Home'
 import 'react-native-gesture-handler';
-import Comments from './screens/Comments'
-import CommentsPopUp from './screens/CommentsPopUp'
-import PostDetail from './screens/PostDetail'
-import SharePost from './screens/SharePost'
-import PostOptions from './screens/PostOptions'
+import Comments from './app/screens/Comments'
+import CommentsPopUp from './app/screens/CommentsPopUp'
+import PostDetail from './app/screens/PostDetail'
+import SharePost from './app/screens/SharePost'
+import PostOptions from './app/screens/PostOptions'
 import { navigationRef } from './rootNavigation'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import axios from 'axios'
 
-import NotificationScreen from './screens/NotificationTab'
-import NotificationOptions from './screens/NotificationTab/NotificationOptions'
+import NotificationScreen from './app/screens/NotificationTab'
+import NotificationOptions from './app/screens/NotificationTab/NotificationOptions'
 
-import PhotoChooser from './screens/PhotoChooser'
-//import Camera from './screens/CameraTool'
+import PhotoChooser from './app/screens/PhotoChooser'
 
-import Page from './screens/Pages'
-import PagePostDetail from './screens/Pages/PagePostDetail'
 
-import WatchScreen from './screens/WatchTab'
+import Page from './app/screens/Pages'
+import PagePostDetail from './app/screens/Pages/PagePostDetail'
+
+import WatchScreen from './app/screens/WatchTab'
 //import WatchDetailList from './screens/WatchTab/WatchDetailList'
 // import WatchOptions from './screens/WatchTab/WatchOptions'
 // import WatchSearch from './screens/Search/WatchSearch'
 // import WatchDetail from './screens/WatchTab/WatchDetail';
 
-import ShortCutScreen from './screens/ShortCutTab'
-import Marketplace from './screens/ShortCutTab/Marketplace'
-import MarketplaceArea from './screens/ShortCutTab/MarketplaceArea'
-import MarketplaceProductDetail from './screens/ShortCutTab/MarketplaceProductDetail'
-import MarketplaceCategory from './screens/ShortCutTab/MarketplaceCategory'
-import MarketplaceSearch from './screens/Search/MarketplaceSearch'
+// import ShortCutScreen from './app/screens/ShortCutTab'
+// import Marketplace from './app/screens/ShortCutTab/Marketplace'
+// import MarketplaceArea from './app/screens/ShortCutTab/MarketplaceArea'
+// import MarketplaceProductDetail from './app/screens/ShortCutTab/MarketplaceProductDetail'
+// import MarketplaceCategory from './app/screens/ShortCutTab/MarketplaceCategory'
+// import MarketplaceSearch from './app/screens/Search/MarketplaceSearch'
 
-import ProfileScreen from './screens/ProfileTab'
-import ProfileX from './screens/ProfileTab/ProfileX'
-import ProfileSetting from './screens/ProfileTab/ProfileSetting'
-import ProfilePostOptions from './screens/ProfileTab/ProfilePostOptions'
-import EditPublicInfo from './screens/ProfileTab/EditPublicInfo'
-import FullFriends from './screens/ProfileTab/FullFriends'
-import FriendOptions from './screens/ProfileTab/FriendOptions'
-import AvatarOptions from './screens/ProfileTab/AvatarOptions'
-import FindFriends from './screens/ProfileTab/FindFriends'
-import FriendRequests from './screens/ProfileTab/FriendRequests'
+import ProfileScreen from './app/screens/ProfileTab'
+import ProfileX from './app/screens/ProfileTab/ProfileX'
+import ProfileSetting from './app/screens/ProfileTab/ProfileSetting'
+import ProfilePostOptions from './app/screens/ProfileTab/ProfilePostOptions'
+import EditPublicInfo from './app/screens/ProfileTab/EditPublicInfo'
+import FullFriends from './app/screens/ProfileTab/FullFriends'
+import FriendOptions from './app/screens/ProfileTab/FriendOptions'
+import AvatarOptions from './app/screens/ProfileTab/AvatarOptions'
+import FindFriends from './app/screens/ProfileTab/FindFriends'
+import FriendRequests from './app/screens/ProfileTab/FriendRequests'
 
-import StoryDetailScreen from './screens/StoryDetail'
-import Search from './screens/Search/'
-import Result from './screens/Search/Result'
+import StoryDetailScreen from './app/screens/StoryDetail'
+import Search from './app/screens/Search/'
+import Result from './app/screens/Search/Result'
 
-import GroupSearch from './screens/Search/GroupSearch'
-import GroupCategory from './screens/GroupTab/GroupCategory'
-import GroupCategories from './screens/GroupTab/GroupCategories'
-import GroupProfile from './screens/GroupTab/group'
-import GroupScreen from './screens/GroupTab'
+import GroupSearch from './app/screens/Search/GroupSearch'
+import GroupCategory from './app/screens/GroupTab/GroupCategory'
+import GroupCategories from './app/screens/GroupTab/GroupCategories'
+import GroupProfile from './app/screens/GroupTab/group'
+import GroupScreen from './app/screens/GroupTab'
 
 const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 const rootStack = createStackNavigator();
-import { FullPostTool, CheckIn, PhotoUploader, LiveStream } from './screens/PostTools/'
+import { FullPostTool, CheckIn, PhotoUploader, LiveStream } from './app/screens/PostTools/'
 import { Platform } from 'react-native';
 import CameraRoll from '@react-native-community/cameraroll'
-import { BASE_URL, STATUSBAR_HEIGHT } from './constants'
-import SeenVideos from './screens/WatchTab/SeenVideos';
+import { BASE_URL, STATUSBAR_HEIGHT } from './app/constants'
+import SeenVideos from './app/screens/WatchTab/SeenVideos';
 
 
 axios.defaults.baseURL = BASE_URL
@@ -174,11 +174,11 @@ function App() {
 					<rootStack.Screen name="StoryDetail" component={StoryDetailScreen} />
 					<rootStack.Screen name="PostDetail" component={PostDetail} />
 
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="Marketplace" component={Marketplace} />
+					{/* <rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="Marketplace" component={Marketplace} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="MarketplaceSearch" component={MarketplaceSearch} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="MarketplaceProductDetail" component={MarketplaceProductDetail} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="MarketplaceCategory" component={MarketplaceCategory} />
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="MarketplaceArea" component={MarketplaceArea} />
+					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="MarketplaceArea" component={MarketplaceArea} /> */}
 
 					<rootStack.Screen options={{ gestureEnabled: false }} name="Page" component={Page} />
 					<rootStack.Screen options={{ gestureEnabled: true }} name="PagePostDetail" component={PagePostDetail} />

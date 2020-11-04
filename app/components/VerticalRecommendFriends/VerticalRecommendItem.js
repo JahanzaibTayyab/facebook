@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { SCREEN_WIDTH } from '../../constants'
 import ExTouchableOpacity from '../ExTouchableOpacity'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 
 export default class VerticalRecommendItem extends Component {
     constructor(props) {

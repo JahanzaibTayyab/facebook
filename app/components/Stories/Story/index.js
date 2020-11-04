@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
-import * as navigation from '../../../rootNavigation'
+import * as navigation from '../../../../rootNavigation'
 import { TabActions } from '@react-navigation/native';
 export default class index extends Component {
     constructor(props) {

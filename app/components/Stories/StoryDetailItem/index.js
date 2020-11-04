@@ -5,8 +5,8 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { connect } from 'react-redux'
-import { SetShowingStoryRequest } from '../../../actions/showingStoryActions'
-import * as navigation from '../../../rootNavigation'
+import { SetShowingStoryRequest } from '../../../Redux/actions/showingStoryActions'
+import * as navigation from '../../../../rootNavigation'
 class index extends Component {
     constructor(props) {
         super(props)

@@ -1,31 +1,35 @@
-import React, { useEffect } from 'react'
+import React, { Component } from 'react'
 import { Text, StyleSheet, View, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import { FetchGroupCategoriesRequest } from '../../actions/groupCategoriesActions'
+import { FetchGroupCategoriesRequest } from '../../Redux/actions/groupCategoriesActions'
 import GroupCategoryItem from './GroupCategoryItem'
-function index(props) {
-
-    useEffect(() => {
-        const { fetchGroupCategories } = props
+class index extends Component {
+    constructor(props) {
+        super(props)
+    }
+    componentDidMount() {
+        const { fetchGroupCategories } = this.props
         fetchGroupCategories()
-    }, []);
-    const { groupCategories } = props
-    if (groupCategories.length === 0) return <View></View>
-    return (
-        <ScrollView style={styles.container} bounces={false}>
-            {groupCategories.map((category, index) => (
-                <View key={index}>
-                    {category.isPopular && (
-                        <GroupCategoryItem category={category} key={index} />
-                    )}
-                </View>
-            ))}
-        </ScrollView>
-    )
+    }
+    render() {
+        const { groupCategories } = this.props
+        if (groupCategories.length === 0) return <View></View>
+        return (
+            <ScrollView style={styles.container} bounces={false}>
+                {groupCategories.map((category, index) => (
+                    <View key={index}>
+                        {category.isPopular && (
+                            <GroupCategoryItem category={category} key={index} />
+                        )}
+                    </View>
+                ))}
+            </ScrollView>
+        )
+    }
 }
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
     return {
-        groupCategories
+        groupCategories: state.groupCategories
     }
 }
 const mapDispatchToProps = (dispatch, props) => {
@@ -36,8 +40,8 @@ const mapDispatchToProps = (dispatch, props) => {
 export default connect(mapStateToProps, mapDispatchToProps)(index)
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 5,
-        borderBottomColor: '#ddd',
-        borderBottomWidth: 0.2,
+        paddingVertical:5,
+        borderBottomColor:'#ddd',
+        borderBottomWidth:0.2,
     }
 })

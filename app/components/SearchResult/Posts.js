@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import ExTouchableOpacity from '../ExTouchableOpacity'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import { SCREEN_WIDTH } from '../../constants'
 
 class Posts extends Component {

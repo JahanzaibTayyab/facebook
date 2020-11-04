@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, Image } from 'react-native'
 import ExTouchableOpacity from '../ExTouchableOpacity'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 export default class WatchSearchRecommendItem extends Component {
     onPressRecommendHandler() {
         // navigation.
