@@ -2,31 +2,23 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Image, Dimensions } from 'react-native'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-class JoinGroupListItem extends Component {
-    constructor(props) {
-        super(props)
-    }
-    componentDidMount() {
+function JoinGroupListItem(props) {
+    function onLongPressShowOption() {
 
     }
-    onLongPressShowOption() {
-
-    }
-    render() {
-        const { groupDetail } = this.props
-        return (
-            <View style={styles.container}>
-                <Image source={{ uri: groupDetail.avatar_url }} style={styles.avatar}></Image>
-                <TouchableWithoutFeedback style={styles.centerWraper} onLongPress={this.onLongPressShowOption.bind(this)}>
-                    <Text numberOfLines={2} style={styles.groupTitle}>{groupDetail.name}</Text>
-                    <Text numberOfLines={1} style={styles.groupSubTitle}>{groupDetail.member < 1000 ? groupDetail.member : Math.round(groupDetail.member / 1000) + 'k'} members - {groupDetail.postPerDay} posts per day</Text>
-                </TouchableWithoutFeedback>
-                <TouchableOpacity style={styles.btnJoin}>
-                    <Text style={{ fontWeight: '500', fontSize: 16 }}>Join Group</Text>
-                </TouchableOpacity>
-            </View>
-        )
-    }
+    const { groupDetail } = this.props
+    return (
+        <View style={styles.container}>
+            <Image source={{ uri: groupDetail.avatar_url }} style={styles.avatar}></Image>
+            <TouchableWithoutFeedback style={styles.centerWraper} onLongPress={onLongPressShowOption.bind(this)}>
+                <Text numberOfLines={2} style={styles.groupTitle}>{groupDetail.name}</Text>
+                <Text numberOfLines={1} style={styles.groupSubTitle}>{groupDetail.member < 1000 ? groupDetail.member : Math.round(groupDetail.member / 1000) + 'k'} members - {groupDetail.postPerDay} posts per day</Text>
+            </TouchableWithoutFeedback>
+            <TouchableOpacity style={styles.btnJoin}>
+                <Text style={{ fontWeight: '500', fontSize: 16 }}>Join Group</Text>
+            </TouchableOpacity>
+        </View>
+    )
 }
 export default JoinGroupListItem
 const screenWidth = Math.round(Dimensions.get('window').width);

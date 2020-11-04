@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, StyleSheet, View, ScrollView, TouchableOpacity, Dimensions } from 'react-native'
 import RecommendItem from './RecommendItem'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
@@ -6,24 +6,21 @@ import { connect } from 'react-redux'
 import { FetchRecommendFriendsRequest } from '../../actions/friendActions'
 import ExTouchableOpacity from '../ExTouchableOpacity'
 import { navigation } from '../../rootNavigation'
-class index extends Component {
-    constructor(props) {
-        super(props)
-        this._pivotX = 0
-    }
-    componentDidMount() {
-        const { fetchRecommendFriends } = this.props
+function index(props) {
+    const _pivotX = 0
+    useEffect(() => {
+        const { fetchRecommendFriends } = props
         fetchRecommendFriends()
-    }
-    onPressViewAllRecommendsHandler() {
+    }, []);
+    function onPressViewAllRecommendsHandler() {
         navigation.navigate('FindFriends')
     }
-    onScrollHandler(event) {
+    function onScrollHandler(event) {
         const offsetX = event.nativeEvent.contentOffset.x
-        if (this._pivotX === offsetX) return;
+        if (_pivotX === offsetX) return;
         const calculatedNumber = Math.floor(offsetX / (0.6 * 0.5 * screenWidth + 5))
         if (calculatedNumber > 0) {
-            if (calculatedNumber == 1 && this._pivotX < offsetX) {
+            if (calculatedNumber == 1 && _pivotX < offsetX) {
                 this.refs._scrollView.scrollTo({
                     y: 0,
                     x: 0.6 * screenWidth * 0.75 + 5,
@@ -50,44 +47,42 @@ class index extends Component {
                 animated: true
             })
         }
-        this._pivotX = offsetX
+        _pivotX = offsetX
     }
-    render() {
-        const { recommendFriends } = this.props
-        if (recommendFriends === undefined || recommendFriends.length === 0) return <View></View>
-        return (
-            <View style={styles.container}>
-                <View style={styles.headerWrapper}>
-                    <Text style={{ fontSize: 16, fontWeight: '500', color: '#333' }}>People you can know</Text>
-                    <TouchableOpacity style={styles.btnOptions}>
-                        <FontAwesome5Icon name="ellipsis-h" color="#333" size={20}></FontAwesome5Icon>
-                    </TouchableOpacity>
-                </View>
-                <ScrollView decelerationRate={0.5}
-                    scrollEventThrottle={30}
-                    showsHorizontalScrollIndicator={false}
-                    ref='_scrollView'
-                    onMomentumScrollEnd={this.onScrollHandler.bind(this)}
-                    onScrollEndDrag={this.onScrollHandler.bind(this)}
-                    style={styles.recommendsWrapper}
-                    bounces={false} horizontal={true}>
-                    {recommendFriends.map((profile, index) => (
-                        <RecommendItem key={index} info={profile}></RecommendItem>
-                    ))}
-                </ScrollView>
-                <View>
-                    <ExTouchableOpacity onPress={this.onPressViewAllRecommendsHandler} style={styles.btnSeeAll}>
-                        <Text>See all recommends</Text>
-                        <FontAwesome5Icon style={styles.seeAllIcon} name="chevron-right"></FontAwesome5Icon>
-                    </ExTouchableOpacity>
-                </View>
+    const { recommendFriends } = props
+    if (recommendFriends === undefined || recommendFriends.length === 0) return <View></View>
+    return (
+        <View style={styles.container}>
+            <View style={styles.headerWrapper}>
+                <Text style={{ fontSize: 16, fontWeight: '500', color: '#333' }}>People you can know</Text>
+                <TouchableOpacity style={styles.btnOptions}>
+                    <FontAwesome5Icon name="ellipsis-h" color="#333" size={20}></FontAwesome5Icon>
+                </TouchableOpacity>
             </View>
-        )
-    }
+            <ScrollView decelerationRate={0.5}
+                scrollEventThrottle={30}
+                showsHorizontalScrollIndicator={false}
+                ref='_scrollView'
+                onMomentumScrollEnd={this.onScrollHandler.bind(this)}
+                onScrollEndDrag={this.onScrollHandler.bind(this)}
+                style={styles.recommendsWrapper}
+                bounces={false} horizontal={true}>
+                {recommendFriends.map((profile, index) => (
+                    <RecommendItem key={index} info={profile}></RecommendItem>
+                ))}
+            </ScrollView>
+            <View>
+                <ExTouchableOpacity onPress={this.onPressViewAllRecommendsHandler} style={styles.btnSeeAll}>
+                    <Text>See all recommends</Text>
+                    <FontAwesome5Icon style={styles.seeAllIcon} name="chevron-right"></FontAwesome5Icon>
+                </ExTouchableOpacity>
+            </View>
+        </View>
+    )
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
     return {
-        recommendFriends: state.friends.recommendFriends
+        recommendFriends: friends.recommendFriends
     }
 }
 const mapDispatchToProps = (dispatch, props) => {

@@ -5,114 +5,112 @@ import { SCREEN_WIDTH } from '../../constants'
 import ExTouchableOpacity from '../ExTouchableOpacity'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 
-class Event extends Component {
-    render() {
-        const { events } = this.props
-        const upcomingEvents = [...events].filter(event => event.isOverTime === false).splice(0, 3)
-        const pastEvents = [...events].filter(event => event.isOverTime === true).splice(0, 3)
-        return (
-            <View style={styles.container}>
-                <View style={styles.upcomingEventsWrapper}>
-                    <Text style={{
-                        fontSize: 16,
-                        fontWeight: 'bold',
-                        padding: 15,
-                        borderBottomColor: '#ddd',
-                        borderBottomWidth: 0.5
-                    }}>
-                        Upcoming Events
+function Event(props) {
+    const { events } = props
+    const upcomingEvents = [...events].filter(event => event.isOverTime === false).splice(0, 3)
+    const pastEvents = [...events].filter(event => event.isOverTime === true).splice(0, 3)
+    return (
+        <View style={styles.container}>
+            <View style={styles.upcomingEventsWrapper}>
+                <Text style={{
+                    fontSize: 16,
+                    fontWeight: 'bold',
+                    padding: 15,
+                    borderBottomColor: '#ddd',
+                    borderBottomWidth: 0.5
+                }}>
+                    Upcoming Events
                     </Text>
-                    <View style={styles.eventsWrapper}>
-                        {upcomingEvents.map((event, index) => (
-                            <View key={index} style={styles.eventItem}>
-                                <View style={styles.shortTime}>
-                                    <Text style={{
-                                        color: 'red'
-                                    }}>{event.short_time?.month}</Text>
-                                    <Text style={{
-                                        fontWeight: '500',
-                                        fontSize: 18
-                                    }}>{event.short_time?.date}</Text>
-                                </View>
-                                <View style={styles.eventInfo}>
-                                    <Text style={{
-                                        fontWeight: '500',
-                                        fontSize: 16
-                                    }}>{event.title}</Text>
-                                    <Text style={{
-                                        color: '#333'
-                                    }}>{event.full_time}</Text>
-                                    <Text style={{
-                                        color: '#333'
-                                    }}>{event.address}</Text>
-                                </View>
+                <View style={styles.eventsWrapper}>
+                    {upcomingEvents.map((event, index) => (
+                        <View key={index} style={styles.eventItem}>
+                            <View style={styles.shortTime}>
+                                <Text style={{
+                                    color: 'red'
+                                }}>{event.short_time?.month}</Text>
+                                <Text style={{
+                                    fontWeight: '500',
+                                    fontSize: 18
+                                }}>{event.short_time?.date}</Text>
                             </View>
-                        ))}
-                    </View>
-                    <ExTouchableOpacity style={styles.btnSeeAll}>
-                        <Text style={{
-                            color: '#333',
-                            marginRight: 5,
-                        }}>
-                            SEE ALL
-                        </Text>
-                        <FontAwesome5Icon name="chevron-right" color="#333" />
-                    </ExTouchableOpacity>
+                            <View style={styles.eventInfo}>
+                                <Text style={{
+                                    fontWeight: '500',
+                                    fontSize: 16
+                                }}>{event.title}</Text>
+                                <Text style={{
+                                    color: '#333'
+                                }}>{event.full_time}</Text>
+                                <Text style={{
+                                    color: '#333'
+                                }}>{event.address}</Text>
+                            </View>
+                        </View>
+                    ))}
                 </View>
-                <View style={styles.pastEventsWrapper}>
+                <ExTouchableOpacity style={styles.btnSeeAll}>
                     <Text style={{
-                        fontSize: 16,
-                        fontWeight: 'bold',
-                        padding: 15,
-                        borderBottomColor: '#ddd',
-                        borderBottomWidth: 0.5
+                        color: '#333',
+                        marginRight: 5,
                     }}>
-                        Past Events
-                    </Text>
-                    <View style={styles.eventsWrapper}>
-                        {pastEvents.map((event, index) => (
-                            <View key={index} style={styles.eventItem}>
-                                <View style={styles.shortTime}>
-                                    <Text style={{
-                                        color: 'red'
-                                    }}>{event.short_time?.month}</Text>
-                                    <Text style={{
-                                        fontWeight: '500',
-                                        fontSize: 18
-                                    }}>{event.short_time?.date}</Text>
-                                </View>
-                                <View style={styles.eventInfo}>
-                                    <Text style={{
-                                        fontWeight: '500',
-                                        fontSize: 16
-                                    }}>{event.title}</Text>
-                                    <Text style={{
-                                        color: '#333'
-                                    }}>{event.full_time}</Text>
-                                    <Text style={{
-                                        color: '#333'
-                                    }}>{event.address}</Text>
-                                </View>
-                            </View>
-                        ))}
-                    </View>
-                    <ExTouchableOpacity style={styles.btnSeeAll}>
-                        <Text style={{
-                            color: '#333',
-                            marginRight: 5,
-                        }}>
-                            SEE ALL
+                        SEE ALL
                         </Text>
-                        <FontAwesome5Icon name="chevron-right" color="#333" />
-                    </ExTouchableOpacity>
-                </View>
+                    <FontAwesome5Icon name="chevron-right" color="#333" />
+                </ExTouchableOpacity>
             </View>
-        )
-    }
+            <View style={styles.pastEventsWrapper}>
+                <Text style={{
+                    fontSize: 16,
+                    fontWeight: 'bold',
+                    padding: 15,
+                    borderBottomColor: '#ddd',
+                    borderBottomWidth: 0.5
+                }}>
+                    Past Events
+                    </Text>
+                <View style={styles.eventsWrapper}>
+                    {pastEvents.map((event, index) => (
+                        <View key={index} style={styles.eventItem}>
+                            <View style={styles.shortTime}>
+                                <Text style={{
+                                    color: 'red'
+                                }}>{event.short_time?.month}</Text>
+                                <Text style={{
+                                    fontWeight: '500',
+                                    fontSize: 18
+                                }}>{event.short_time?.date}</Text>
+                            </View>
+                            <View style={styles.eventInfo}>
+                                <Text style={{
+                                    fontWeight: '500',
+                                    fontSize: 16
+                                }}>{event.title}</Text>
+                                <Text style={{
+                                    color: '#333'
+                                }}>{event.full_time}</Text>
+                                <Text style={{
+                                    color: '#333'
+                                }}>{event.address}</Text>
+                            </View>
+                        </View>
+                    ))}
+                </View>
+                <ExTouchableOpacity style={styles.btnSeeAll}>
+                    <Text style={{
+                        color: '#333',
+                        marginRight: 5,
+                    }}>
+                        SEE ALL
+                        </Text>
+                    <FontAwesome5Icon name="chevron-right" color="#333" />
+                </ExTouchableOpacity>
+            </View>
+        </View>
+    )
 }
-const mapStateToProps = state => {
+const mapStateToProps = () => {
     return {
-        events: state.page.events
+        events: page.events
     }
 }
 export default connect(mapStateToProps, null)(Event)

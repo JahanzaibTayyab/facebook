@@ -7,35 +7,33 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { permission } from '../../constants'
 import { connect } from 'react-redux'
 
-class Item extends Component {
-    constructor(props) {
-        super(props)
-    }
-    onPressHandle() {
-        const { comments } = this.props.item
+function Item(props) {
+
+    function onPressHandle() {
+        const { comments } = props.item
         navigation.navigate('Comments', {
             comments
         })
     }
-    onPressPostOptionsIconHandler() {
-        const { item } = this.props
+    function onPressPostOptionsIconHandler() {
+        const { item } = props
         navigation.navigate('PostOptions', {
             postDetail: item
         })
     }
-    onPressPostImageHandler(id) {
+    function onPressPostImageHandler(id) {
         navigation.navigate('PostDetail', {
             id
         })
     }
-    onPressShareHandler() {
-        const { item } = this.props
+    function onPressShareHandler() {
+        const { item } = props
         navigation.navigate('SharePost', {
             id: item.id
         })
     }
-    onPressProfileHandler(userId) {
-        const { user } = this.props
+    function onPressProfileHandler(userId) {
+        const { user } = props
         if (userId === user.id) {
             return navigation.navigate('Profile')
         }
@@ -43,110 +41,108 @@ class Item extends Component {
             userId
         })
     }
-    render() {
-        const { user, item } = this.props
-        return (
-            <View style={styles.item}>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <View style={styles.customListView}>
-                        <Image style={styles.avatar} source={{ uri: item.user?.avatar_url }}></Image>
-                        <View style={styles.infoWrapper}>
-                            <View style={styles.namesWrapper}>
-                                <TouchableOpacity onPress={this.onPressProfileHandler.bind(this, item.user?.id)}>
-                                    <Text style={{ fontSize: 16, fontWeight: '500' }}>{item.user?.name}</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.extraInfoWrapper}>
-                                <Text style={{ color: '#333', fontSize: 14 }}>{item.create_at}</Text>
-                                <Text style={{ fontSize: 16, marginHorizontal: 5 }}>·</Text>
-                                {item.permission == permission.PUBLIC && (
-                                    <FontAwesome5Icon color='#333' name="globe-asia" />
-                                )}
-                                {item.permission == permission.SETTING && (
-                                    <FontAwesome5Icon color='#333' name="cogs" />
-                                )}
-                                {item.permission == permission.GROUP && (
-                                    <FontAwesome5Icon color='#333' name="newspaper" />
-                                )}
-                            </View>
+    const { user, item } = props
+    return (
+        <View style={styles.item}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={styles.customListView}>
+                    <Image style={styles.avatar} source={{ uri: item.user?.avatar_url }}></Image>
+                    <View style={styles.infoWrapper}>
+                        <View style={styles.namesWrapper}>
+                            <TouchableOpacity onPress={onPressProfileHandler.bind(this, item.user?.id)}>
+                                <Text style={{ fontSize: 16, fontWeight: '500' }}>{item.user?.name}</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.extraInfoWrapper}>
+                            <Text style={{ color: '#333', fontSize: 14 }}>{item.create_at}</Text>
+                            <Text style={{ fontSize: 16, marginHorizontal: 5 }}>·</Text>
+                            {item.permission == permission.PUBLIC && (
+                                <FontAwesome5Icon color='#333' name="globe-asia" />
+                            )}
+                            {item.permission == permission.SETTING && (
+                                <FontAwesome5Icon color='#333' name="cogs" />
+                            )}
+                            {item.permission == permission.GROUP && (
+                                <FontAwesome5Icon color='#333' name="newspaper" />
+                            )}
                         </View>
                     </View>
-                    <TouchableOpacity onPress={this.onPressPostOptionsIconHandler.bind(this)} style={{ width: 25, alignItems: 'center' }}>
-                        <Icon name="ellipsis-h" color="#000"></Icon>
+                </View>
+                <TouchableOpacity onPress={onPressPostOptionsIconHandler.bind(this)} style={{ width: 25, alignItems: 'center' }}>
+                    <Icon name="ellipsis-h" color="#000"></Icon>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.contentContainer}>
+                <Text style={styles.paragraph}>{item.content}</Text>
+            </View>
+            <TouchableOpacity onPress={onPressPostImageHandler.bind(this, item.id)}>
+                <View style={styles.imageContainer}>
+                    <ScaledImage height={300} source={item.image}></ScaledImage>
+                </View>
+            </TouchableOpacity>
+            <View horizontal={true} style={styles.reactionContainer}>
+                <TouchableOpacity><Icon
+                    name="thumbs-up"
+                    color="#318bfb"
+                    backgroundColor="#fff"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity><Icon
+                    name="heart"
+                    color="#e8304a"
+                    backgroundColor="white"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity><Icon
+                    name="grin-squint"
+                    color="#f7ca51"
+                    backgroundColor="white"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity><Icon
+                    name="surprise"
+                    color="#f7ca51"
+                    backgroundColor="white"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity><Icon
+                    name="sad-tear"
+                    color="#f7ca51"
+                    backgroundColor="white"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity><Icon
+                    lineBreakMode={false}
+                    name="angry"
+                    color="#dc4311"
+                    backgroundColor="white"
+                    style={styles.reactionIcon}
+                ></Icon></TouchableOpacity>
+                <TouchableOpacity onPress={onPressHandle.bind(this)}><Icon
+                    lineBreakMode={false}
+                    name="comment-alt"
+                    color="gray"
+                    backgroundColor="white"
+                    style={{ ...styles.reactionIcon, fontSize: 14 }}
+                ><Text style={{ fontSize: 12 }}> {item.comments.length} comments</Text></Icon></TouchableOpacity>
+                <TouchableOpacity onPress={onPressShareHandler.bind(this)} style={styles.shareIcon}><Icon name="share-alt"
+                    color="gray" ><Text style={{ fontSize: 12, textAlignVertical: 'center' }}> Share</Text></Icon></TouchableOpacity>
+            </View>
+            <View style={styles.commentContainer}>
+                <Image source={{ uri: user.avatar_url }} style={styles.commentAvatar}></Image>
+                <View style={styles.commentInput}>
+                    <TouchableOpacity onPress={onPressHandle.bind(this)} style={styles.commentInputWrapper}>
+                        <Text>Comment...</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.contentContainer}>
-                    <Text style={styles.paragraph}>{item.content}</Text>
-                </View>
-                <TouchableOpacity onPress={this.onPressPostImageHandler.bind(this, item.id)}>
-                    <View style={styles.imageContainer}>
-                        <ScaledImage height={300} source={item.image}></ScaledImage>
-                    </View>
-                </TouchableOpacity>
-                <View horizontal={true} style={styles.reactionContainer}>
-                    <TouchableOpacity><Icon
-                        name="thumbs-up"
-                        color="#318bfb"
-                        backgroundColor="#fff"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity><Icon
-                        name="heart"
-                        color="#e8304a"
-                        backgroundColor="white"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity><Icon
-                        name="grin-squint"
-                        color="#f7ca51"
-                        backgroundColor="white"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity><Icon
-                        name="surprise"
-                        color="#f7ca51"
-                        backgroundColor="white"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity><Icon
-                        name="sad-tear"
-                        color="#f7ca51"
-                        backgroundColor="white"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity><Icon
-                        lineBreakMode={false}
-                        name="angry"
-                        color="#dc4311"
-                        backgroundColor="white"
-                        style={styles.reactionIcon}
-                    ></Icon></TouchableOpacity>
-                    <TouchableOpacity onPress={this.onPressHandle.bind(this)}><Icon
-                        lineBreakMode={false}
-                        name="comment-alt"
-                        color="gray"
-                        backgroundColor="white"
-                        style={{ ...styles.reactionIcon, fontSize: 14 }}
-                    ><Text style={{ fontSize: 12 }}> {item.comments.length} comments</Text></Icon></TouchableOpacity>
-                    <TouchableOpacity onPress={this.onPressShareHandler.bind(this)} style={styles.shareIcon}><Icon name="share-alt"
-                        color="gray" ><Text style={{ fontSize: 12, textAlignVertical: 'center' }}> Share</Text></Icon></TouchableOpacity>
-                </View>
-                <View style={styles.commentContainer}>
-                    <Image source={{ uri: user.avatar_url }} style={styles.commentAvatar}></Image>
-                    <View style={styles.commentInput}>
-                        <TouchableOpacity onPress={this.onPressHandle.bind(this)} style={styles.commentInputWrapper}>
-                            <Text>Comment...</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TouchableOpacity><Icon style={styles.btnSendComment} name="paper-plane" color="gray"></Icon></TouchableOpacity>
-                </View>
+                <TouchableOpacity><Icon style={styles.btnSendComment} name="paper-plane" color="gray"></Icon></TouchableOpacity>
             </View>
-        )
-    }
+        </View>
+    )
 }
-const mapStateToProps = state => {
+const mapStateToProps = () => {
     return {
-        user: state.user.user
+        user: user.user
     }
 }
 export default connect(mapStateToProps, null)(Item)

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Text, StyleSheet, View, TouchableOpacity, Image, Dimensions, Animated } from 'react-native'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import ExTouchableOpacity from '../ExTouchableOpacity'
 import { connect } from 'react-redux'
 import { navigation } from '../../rootNavigation'
-class RecommendItem extends Component {
+function RecommendItem(props) {
     constructor(props) {
         super(props)
         this.state = {
