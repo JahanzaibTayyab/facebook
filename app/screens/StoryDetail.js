@@ -3,10 +3,10 @@ import { View, Image, Text, TouchableOpacity, StyleSheet, ImageBackground, TextI
 import { connect } from 'react-redux'
 
 import Swiper from 'react-native-swiper'
-import * as navigation from '../rootNavigation'
+import * as navigation from '../../rootNavigation'
 import StoryDetailItem from '../components/Stories/StoryDetailItem'
-import { FetchStoriesRequest } from '../actions/storiesAction'
-import { SetShowingStoryRequest } from '../actions/showingStoryActions'
+import { FetchStoriesRequest } from '../Redux/actions/storiesAction'
+import { SetShowingStoryRequest } from '../Redux/actions/showingStoryActions'
 class StoryDetail extends Component {
     constructor(props) {
         super(props)

@@ -1,4 +1,4 @@
-import {actionStories} from '../constants'
+import {actionStories} from '../../constants'
 import axios from 'axios'
 const taskURI  = '/stories?_expand=user'
 export const FetchStoriesRequest = ()=>{

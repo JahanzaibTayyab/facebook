@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Animated, View, Text, StyleSheet, TouchableOpacity, Dimensions, TextInput, KeyboardAvoidingView } from 'react-native'
 import { ScrollView, PanGestureHandler, State } from 'react-native-gesture-handler'
 import Comment from '../components/Comment'
-import * as navigation from '../rootNavigation'
+import * as navigation from '../../rootNavigation'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { FIXED_STATUSBAR_HEIGHT } from '../constants'
 export default class extends Component {

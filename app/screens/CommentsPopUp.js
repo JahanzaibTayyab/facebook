@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { TextInput, View, ScrollView, Text, StyleSheet, TouchableOpacity, Dimensions, TouchableWithoutFeedback, KeyboardAvoidingView } from 'react-native'
 import Comment from '../components/Comment'
-import * as navigation from '../rootNavigation'
+import * as navigation from '../../rootNavigation'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 export default class extends Component {
     constructor(props) {

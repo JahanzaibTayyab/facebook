@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, ScrollView, TouchableOpacity, Image } from 'react-native'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { SCREEN_HEIGHT, STATUSBAR_HEIGHT } from '../../constants'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 import HighlightPhotos from '../../components/HighlightPhotos'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 export default class EditPublicInfo extends Component {

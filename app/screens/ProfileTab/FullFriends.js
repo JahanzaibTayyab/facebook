@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, TouchableOpacity, TextInput, ScrollView, Image } from 'react-native'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { SCREEN_WIDTH, SCREEN_HEIGHT, STATUSBAR_HEIGHT } from '../../constants'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 
 export default class FullFriends extends Component {

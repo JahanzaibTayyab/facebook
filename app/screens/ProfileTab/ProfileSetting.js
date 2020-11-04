@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, TouchableOpacity, StatusBar, ScrollView } from 
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { STATUSBAR_HEIGHT } from '../../constants'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import { connect } from 'react-redux'
 class ProfileSetting extends Component {
     onPressGoBackHandler() {

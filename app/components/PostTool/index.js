@@ -41,7 +41,7 @@ class index extends Component {
                     <TouchableOpacity activeOpacity={0.5} style={styles.userAvatarWrapper}>
                         <Image source={{ uri: user.avatar_url }} style={styles.userAvatar} ></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={isWriteToAnyOne ? this.onPressPostToAnyOneHandler.bind(this) : this.onFullPostToolPressHandler} style={styles.postInputWrapper}>
+                    <TouchableOpacity onPress={isWriteToAnyOne ? console.log("Search") : console.log("Search")} style={styles.postInputWrapper}>
                         <View style={{ ...styles.postInput, backgroundColor: this.state.inputBgColor }}>
                             <Text>{isWriteToAnyOne || isWriteToPage ? `Write somethings to ${userX?.name || page?.name}` : 'What are you thinking ?'}</Text>
                         </View>

@@ -1,4 +1,4 @@
-import { groupDetailActions } from '../constants'
+import { groupDetailActions } from '../../constants'
 import axios from 'axios'
 export const FetchGroupDetailRequest = (id) => {
     const taskURI = `/groups/${id}`

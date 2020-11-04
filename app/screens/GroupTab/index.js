@@ -3,9 +3,9 @@ import { Text, StyleSheet, View, TouchableOpacity, Image } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { connect } from 'react-redux'
-import { FetchGroupsRequest } from '../../actions/groupsActions'
+import { FetchGroupsRequest } from '../../Redux/actions/groupsActions'
 import GroupPosts from '../../components/GroupPosts'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 class index extends Component {
     constructor(props) {
@@ -14,16 +14,6 @@ class index extends Component {
     componentDidMount() {
         const { fetchGroups } = this.props
         fetchGroups()
-    }
-    onPressGroupSearchHandler() {
-        navigation.navigate('GroupSearch')
-    }
-    componentDidUpdate() {
-    }
-    onPressGoToGroupHandler(groupId) {
-        navigation.navigate('GroupProfile', {
-            id: groupId
-        })
     }
     render() {
         const { groups } = this.props
@@ -34,7 +24,7 @@ class index extends Component {
                     <View style={styles.topWrapper}>
                         <View style={styles.titleWrapper}>
                             <Text style={styles.title}>Group</Text>
-                            <ExTouchableOpacity onPress={this.onPressGroupSearchHandler} style={styles.btnSearch}>
+                            <ExTouchableOpacity onPress={console.log("Search")} style={styles.btnSearch}>
                                 <FontAwesome5Icon size={20} name="search"></FontAwesome5Icon>
                             </ExTouchableOpacity>
                         </View>
@@ -64,7 +54,7 @@ class index extends Component {
                             {groups.map((group, index) => (
                                 <View key={index}>
                                     {(index < groups.length - 1 || index > 9) &&
-                                        <TouchableOpacity onPress={this.onPressGoToGroupHandler.bind(this, group.id)} style={{ ...styles.recommendItem, marginRight: 10 }}>
+                                        <TouchableOpacity onPress={console.log("Group ID Search")} style={{ ...styles.recommendItem, marginRight: 10 }}>
                                             {group.isPin &&
                                                 (
                                                     <View style={styles.pinBtn}>

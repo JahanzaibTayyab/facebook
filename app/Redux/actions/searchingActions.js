@@ -1,4 +1,4 @@
-import { searchingActions } from '../constants'
+import { searchingActions } from '../../constants'
 import axios from 'axios'
 
 export const commonSearchRequest = (keyword) => {

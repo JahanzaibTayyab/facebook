@@ -1,4 +1,4 @@
-import { groupPostsActions } from '../constants'
+import { groupPostsActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     allGroups: [],

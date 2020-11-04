@@ -3,8 +3,8 @@ import { Keyboard, Animated, Text, StyleSheet, View, SafeAreaView, TouchableOpac
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { PanGestureHandler, State, TouchableWithoutFeedback, ScrollView } from 'react-native-gesture-handler'
 import { connect } from 'react-redux'
-import { FetchBgColorsRequest } from '../../actions/bgColorsActions'
-import * as navigation from '../../rootNavigation'
+import { FetchBgColorsRequest } from '../../Redux/actions/bgColorsActions'
+import * as navigation from '../../../rootNavigation'
 class FullPostTool extends Component {
     constructor(props) {
         super(props)

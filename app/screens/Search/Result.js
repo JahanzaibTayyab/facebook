@@ -4,9 +4,9 @@ import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { TextInput } from 'react-native-gesture-handler'
 import { STATUSBAR_HEIGHT, SCREEN_WIDTH, resultTypes, SCREEN_HEIGHT } from '../../constants'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import { connect } from 'react-redux'
-import { commonSearchRequest, SearchUsersRequest } from '../../actions/searchingActions'
+import { commonSearchRequest, SearchUsersRequest } from '../../Redux/actions/searchingActions'
 import { Peoples, Posts, Pages, Groups } from '../../components/SearchResult'
 class Result extends Component {
     constructor(props) {

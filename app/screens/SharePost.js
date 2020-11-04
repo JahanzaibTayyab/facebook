@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Keyboard, Text, StyleSheet, View, Dimensions, TouchableOpacity, Share, Image, KeyboardAvoidingView } from 'react-native'
-import * as navigation from '../rootNavigation'
+import * as navigation from '../../rootNavigation'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { connect } from 'react-redux'
 import { TextInput } from 'react-native-gesture-handler'

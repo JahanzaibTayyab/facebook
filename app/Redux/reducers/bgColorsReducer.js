@@ -1,4 +1,4 @@
-import { bgColorsActions } from '../constants'
+import { bgColorsActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = []
 const reducer = (state = defaultState, action) => {

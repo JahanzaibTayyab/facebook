@@ -1,4 +1,4 @@
-import { watchSearchRecommendActions } from '../constants'
+import { watchSearchRecommendActions } from '../../constants'
 import axios from 'axios'
 export const FetchWatchSearchRecommendsRequest = () => {
     const taskURI = `/watch_search_recommends?_expand=page`

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity, Animated } from 'react-native'
 import { connect } from 'react-redux'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { SCREEN_WIDTH } from '../../constants'
 
@@ -91,12 +91,6 @@ class index extends Component {
                         <Image style={styles.icon} source={require('../../assets/icons/group.png')} />
                         <View>
                             <Text style={styles.name}>Groups</Text>
-                        </View>
-                    </ExTouchableOpacity>
-                    <ExTouchableOpacity onPress={this.onPressMarketplaceHandler} style={styles.btnOption} >
-                        <Image style={styles.icon} source={require('../../assets/icons/marketplace.png')} />
-                        <View>
-                            <Text style={styles.name}>Marketplace</Text>
                         </View>
                     </ExTouchableOpacity>
                     <ExTouchableOpacity style={styles.btnOption} >

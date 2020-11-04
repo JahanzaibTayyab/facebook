@@ -1,4 +1,4 @@
-import { watchSearchRecommendActions } from '../constants'
+import { watchSearchRecommendActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = []
 const reducer = (state = defaultState, action) => {

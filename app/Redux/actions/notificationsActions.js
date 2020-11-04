@@ -1,4 +1,4 @@
-import { notificationsActions } from '../constants'
+import { notificationsActions } from '../../constants'
 import axios from 'axios'
 export const FetchNotificationsRequest = () => {
     const taskURI = '/notifications?_expand=post&_expand=user&_expand=group&_expand=group_post'

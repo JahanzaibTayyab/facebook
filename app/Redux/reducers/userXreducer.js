@@ -1,4 +1,4 @@
-import { userXActions } from '../constants'
+import { userXActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     user: {},

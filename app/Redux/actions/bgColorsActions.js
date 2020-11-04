@@ -1,4 +1,4 @@
-import { bgColorsActions } from '../constants'
+import { bgColorsActions } from '../../constants'
 import axios from 'axios'
 const taskURI = '/bg_colors'
 export const FetchBgColorsRequest = () => {

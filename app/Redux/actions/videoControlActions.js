@@ -1,4 +1,4 @@
-import { videoControlActions } from '../constants'
+import { videoControlActions } from '../../constants'
 export const SetWatchingVideo = (playingId, isPlaying = true) => {
     const payload = {
         playingId,

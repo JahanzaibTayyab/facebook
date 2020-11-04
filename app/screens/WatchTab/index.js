@@ -4,8 +4,8 @@ import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { connect } from 'react-redux'
 import WatchList from '../../components/WatchList'
-import { SetWatchingVideo } from '../../actions/videoControlActions'
-import * as navigation from '../../rootNavigation'
+import { SetWatchingVideo } from '../../Redux/actions/videoControlActions'
+import * as navigation from '../../../rootNavigation'
 class index extends Component {
     constructor(props) {
         super(props)

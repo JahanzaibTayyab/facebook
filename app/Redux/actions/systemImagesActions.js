@@ -1,4 +1,4 @@
-import { systemImagesActions, permission } from '../constants'
+import { systemImagesActions, permission } from '../../constants'
 // import * as MediaLibrary from 'expo-media-library';
 import axios from 'axios'
 import { Alert } from 'react-native';

@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, TouchableOpacity, ScrollView, Image } from 'react-native'
 import { connect } from 'react-redux';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import { FetchSystemImagesRequest } from '../actions/systemImagesActions';
+import { FetchSystemImagesRequest } from '../Redux/actions/systemImagesActions';
 import { SCREEN_WIDTH, STATUSBAR_HEIGHT } from '../constants';
 import ExTouchableOpacity from '../components/ExTouchableOpacity';
-import { navigation } from '../rootNavigation';
+import { navigation } from '../../rootNavigation';
 class PhotoChooser extends Component {
     constructor(props) {
         super(props)

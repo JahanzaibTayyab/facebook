@@ -3,8 +3,8 @@ import { Text, StyleSheet, View, Image, TouchableOpacity, TouchableWithoutFeedba
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import * as navigation from '../../rootNavigation'
-import { FetchPagePostDetailRequest } from '../../actions/pageDetailActions'
+import * as navigation from '../../../rootNavigation'
+import { FetchPagePostDetailRequest } from '../../Redux/actions/pageDetailActions'
 class PostDetailModal extends Component {
     constructor(props) {
         super(props)

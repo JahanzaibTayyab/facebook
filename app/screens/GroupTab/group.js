@@ -4,9 +4,9 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 import GroupPostTool from '../../components/PostTool/GroupPostTool'
 import { connect } from 'react-redux'
-import { FetchGroupDetailRequest } from '../../actions/groupDetailActions'
+import { FetchGroupDetailRequest } from '../../Redux/actions/groupDetailActions'
 import { SCREEN_HEIGHT, SCREEN_WIDTH, STATUSBAR_HEIGHT } from '../../constants'
-import * as navigation from '../../rootNavigation'
+import * as navigation from '../../../rootNavigation'
 import GroupPosts from '../../components/GroupPosts'
 class Group extends Component {
     constructor(props) {

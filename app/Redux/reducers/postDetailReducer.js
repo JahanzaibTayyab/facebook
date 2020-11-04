@@ -1,4 +1,4 @@
-import { postDetailActions } from '../constants'
+import { postDetailActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     isShowModal: false,

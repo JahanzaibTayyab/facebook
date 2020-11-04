@@ -1,4 +1,4 @@
-import { historyActions } from '../constants'
+import { historyActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     groups: [],

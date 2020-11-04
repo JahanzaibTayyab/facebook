@@ -28,12 +28,6 @@ class Item extends Component {
             id
         })
     }
-    onPressShareHandler() {
-        const { item } = this.props
-        navigation.navigate('SharePost', {
-            id: item.id
-        })
-    }
     onPressProfileHandler(userId) {
         const { user } = this.props
         if (userId === user.id) {
@@ -128,7 +122,7 @@ class Item extends Component {
                         backgroundColor="white"
                         style={{ ...styles.reactionIcon, fontSize: 14 }}
                     ><Text style={{ fontSize: 12 }}> {item.comments.length} comments</Text></Icon></TouchableOpacity>
-                    <TouchableOpacity onPress={this.onPressShareHandler.bind(this)} style={styles.shareIcon}><Icon name="share-alt"
+                    <TouchableOpacity onPress={console.log("Share")} style={styles.shareIcon}><Icon name="share-alt"
                         color="gray" ><Text style={{ fontSize: 12, textAlignVertical: 'center' }}> Share</Text></Icon></TouchableOpacity>
                 </View>
                 <View style={styles.commentContainer}>

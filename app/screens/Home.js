@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { FetchPostsRequest } from '../actions/postsAction'
-import { LoginRequest } from '../actions/userActions'
+import { FetchPostsRequest } from '../Redux/actions/postsAction'
+import { LoginRequest } from '../Redux/actions/userActions'
 import { StyleSheet, Text, View, Button, ScrollView, Alert } from 'react-native';
 
 import { Dimensions } from "react-native";

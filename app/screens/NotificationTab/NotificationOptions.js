@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Animated, Image, TouchableOpacity } from 'react-native'
 import { SCREEN_HEIGHT, SCREEN_WIDTH, notificationTypes } from '../../constants'
 import { StackActions } from '@react-navigation/native'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 

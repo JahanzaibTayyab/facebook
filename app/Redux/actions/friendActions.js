@@ -1,4 +1,4 @@
-import { friendActions } from '../constants'
+import { friendActions } from '../../constants'
 import axios from 'axios'
 const taskURI = '/recommend_friends?_expand=user'
 export const FetchRecommendFriendsRequest = () => {

@@ -1,4 +1,4 @@
-import { categoryGroupListActions } from '../constants'
+import { categoryGroupListActions } from '../../constants'
 import axios from 'axios'
 export const FetchCategoryGroupListRequest = (arrID) => {
     arrID = arrID.join('&id=')

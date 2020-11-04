@@ -4,7 +4,7 @@ import { Text, StyleSheet, View } from 'react-native'
 export default class CheckIn extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <View style={{flex:1,justifyContent:"center",alignItems:"center",backgroundColor:"green"}}>
                 <Text> CheckIn </Text>
             </View>
         )

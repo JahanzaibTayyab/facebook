@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Text, StyleSheet, View, Image, TouchableOpacity, TouchableWithoutFeedback, Dimensions, Animated } from 'react-native'
 import Modal from 'react-native-modal'
 import { connect } from 'react-redux'
-import { closePostDetailModal, openCommentModal, FetchPostDetailRequest } from '../actions/postDetailActions'
+import { closePostDetailModal, openCommentModal, FetchPostDetailRequest } from '../Redux/actions/postDetailActions'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import * as navigation from '../rootNavigation'
+import * as navigation from '../../rootNavigation'
 class PostDetailModal extends Component {
     constructor(props) {
         super(props)

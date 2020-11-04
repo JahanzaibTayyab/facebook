@@ -1,4 +1,4 @@
-import { pageDetailActions } from '../constants'
+import { pageDetailActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     page: {},

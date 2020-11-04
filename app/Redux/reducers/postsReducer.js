@@ -1,4 +1,4 @@
-import { postsActions } from '../constants' 
+import { postsActions } from '../../constants' 
 import {Alert} from 'react-native'
 const defaultState = []
 const reducer = (state = defaultState, action) => {

@@ -1,4 +1,4 @@
-import { showingStoryActions } from '../constants'
+import { showingStoryActions } from '../../constants'
 export const SetShowingStoryRequest = (story, position) => {
     return (dispatch) => {
         const showingStory = {

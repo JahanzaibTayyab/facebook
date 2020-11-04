@@ -1,4 +1,4 @@
-import { groupCategoriesActions } from '../constants'
+import { groupCategoriesActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = []
 const reducer = (state = defaultState, action) => {

@@ -1,4 +1,4 @@
-import { marketplaceActions } from '../constants'
+import { marketplaceActions } from '../../constants'
 import axios from 'axios'
 export const FetchMarketplaceProductsRequest = () => {
     const taskURI = '/products?_expand=user'

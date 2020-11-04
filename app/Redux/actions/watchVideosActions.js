@@ -1,4 +1,4 @@
-import { watchVidesActions } from '../constants'
+import { watchVidesActions } from '../../constants'
 import axios from 'axios'
 export const FetchWatchVideosRequest = () => {
     const taskURI = `/watch_videos?_expand=watch_group&_expand=page`

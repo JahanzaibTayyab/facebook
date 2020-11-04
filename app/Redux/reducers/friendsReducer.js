@@ -1,4 +1,4 @@
-import { friendActions } from '../constants'
+import { friendActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     recommendFriends: [],

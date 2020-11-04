@@ -1,4 +1,4 @@
-import { watchVidesActions, postDetailActions } from '../constants'
+import { watchVidesActions, postDetailActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     watchVideos: [],

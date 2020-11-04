@@ -1,4 +1,4 @@
-import { showingStoryActions } from '../constants'
+import { showingStoryActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {}
 const reducer = (state = defaultState, action) => {

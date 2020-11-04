@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { SCREEN_WIDTH, SCREEN_HEIGHT, STATUSBAR_HEIGHT } from '../../constants'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
-import { navigation } from '../../rootNavigation'
-import { FetchFriendRequestsRequest } from '../../actions/friendActions'
+import { navigation } from '../../../rootNavigation'
+import { FetchFriendRequestsRequest } from '../../Redux/actions/friendActions'
 
 class FriendRequests extends Component {
     constructor(props) {

@@ -1,4 +1,4 @@
-import { userXActions } from '../constants'
+import { userXActions } from '../../constants'
 import axios from 'axios'
 export const FetchUserXRequest = (userId) => {
     const taskURI = `/users/${userId}`

@@ -4,8 +4,8 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 import { STATUSBAR_HEIGHT, SCREEN_WIDTH, searchType } from '../../constants'
 import { connect } from 'react-redux'
-import { FetchHomeHistoriesRequest } from '../../actions/historyActions'
-import { navigation } from '../../rootNavigation'
+import { FetchHomeHistoriesRequest } from '../../Redux/actions/historyActions'
+import { navigation } from '../../../rootNavigation'
 class index extends Component {
     constructor(props) {
         super(props)

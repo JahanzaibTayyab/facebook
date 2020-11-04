@@ -1,4 +1,4 @@
-import { historyActions } from '../constants'
+import { historyActions } from '../../constants'
 import axios from 'axios'
 export const FetchGroupHistoriesRequest = () => {
     const taskURI = '/history'

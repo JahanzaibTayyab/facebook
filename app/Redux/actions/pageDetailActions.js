@@ -1,4 +1,4 @@
-import { pageDetailActions } from '../constants'
+import { pageDetailActions } from '../../constants'
 import axios from 'axios'
 import { Alert } from 'react-native';
 

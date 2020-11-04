@@ -9,7 +9,6 @@ import 'react-native-gesture-handler';
 import Comments from './app/screens/Comments'
 import CommentsPopUp from './app/screens/CommentsPopUp'
 import PostDetail from './app/screens/PostDetail'
-import SharePost from './app/screens/SharePost'
 import PostOptions from './app/screens/PostOptions'
 import { navigationRef } from './rootNavigation'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -25,12 +24,8 @@ import Page from './app/screens/Pages'
 import PagePostDetail from './app/screens/Pages/PagePostDetail'
 
 import WatchScreen from './app/screens/WatchTab'
-//import WatchDetailList from './screens/WatchTab/WatchDetailList'
-// import WatchOptions from './screens/WatchTab/WatchOptions'
-// import WatchSearch from './screens/Search/WatchSearch'
-// import WatchDetail from './screens/WatchTab/WatchDetail';
 
-// import ShortCutScreen from './app/screens/ShortCutTab'
+import ShortCutScreen from './app/screens/ShortCutTab'
 // import Marketplace from './app/screens/ShortCutTab/Marketplace'
 // import MarketplaceArea from './app/screens/ShortCutTab/MarketplaceArea'
 // import MarketplaceProductDetail from './app/screens/ShortCutTab/MarketplaceProductDetail'
@@ -52,10 +47,6 @@ import StoryDetailScreen from './app/screens/StoryDetail'
 import Search from './app/screens/Search/'
 import Result from './app/screens/Search/Result'
 
-import GroupSearch from './app/screens/Search/GroupSearch'
-import GroupCategory from './app/screens/GroupTab/GroupCategory'
-import GroupCategories from './app/screens/GroupTab/GroupCategories'
-import GroupProfile from './app/screens/GroupTab/group'
 import GroupScreen from './app/screens/GroupTab'
 
 const Tab = createMaterialTopTabNavigator();
@@ -65,7 +56,6 @@ import { FullPostTool, CheckIn, PhotoUploader, LiveStream } from './app/screens/
 import { Platform } from 'react-native';
 import CameraRoll from '@react-native-community/cameraroll'
 import { BASE_URL, STATUSBAR_HEIGHT } from './app/constants'
-import SeenVideos from './app/screens/WatchTab/SeenVideos';
 
 
 axios.defaults.baseURL = BASE_URL
@@ -187,13 +177,6 @@ function App() {
 					{/* <rootStack.Screen options={{ gestureEnabled: false }} name="Camera" component={Camera} /> */}
 					<rootStack.Screen options={{ gestureEnabled: false }} name="Search" component={Search} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="Result" component={Result} />
-
-					{/* <rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="WatchOptions" component={WatchOptions} />
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="WatchSearch" component={WatchSearch} /> */}
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="SeenVideos" component={SeenVideos} />
-					{/* <rootStack.Screen options={{ gestureEnabled: true }} name="WatchDetail" component={WatchDetail} /> */}
-					{/* <rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="WatchDetailList" component={WatchDetailList} /> */}
-
 					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="ProfilePostOptions" component={ProfilePostOptions} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="EditPublicInfo" component={EditPublicInfo} />
 					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="FullFriends" component={FullFriends} />
@@ -205,14 +188,7 @@ function App() {
 					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="AvatarOptions" component={AvatarOptions} />
 
 					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="NotificationOptions" component={NotificationOptions} />
-
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="GroupCategory" component={GroupCategory} />
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="GroupCategories" component={GroupCategories} />
-					<rootStack.Screen options={{ gestureEnabled: false }} name="GroupSearch" component={GroupSearch} />
-					<rootStack.Screen options={{ gestureEnabled: false, ...TransitionPresets.SlideFromRightIOS }} name="GroupProfile" component={GroupProfile} />
-
 					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="CommentsPopUp" component={CommentsPopUp} />
-					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="SharePost" component={SharePost} />
 					<rootStack.Screen options={{ cardStyle: { backgroundColor: 'transparent' } }} name="PostOptions" component={PostOptions} />
 					<rootStack.Screen options={{ gestureEnabled: false }} name="FullPostTool" component={FullPostTool} />
 					<rootStack.Screen name="CheckIn" component={CheckIn} />

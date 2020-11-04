@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StackActions } from '@react-navigation/native';
-import store from './store'
+import store from './app/Redux/store'
 
 export const navigationRef = React.createRef();
 // export const navigation = navigationRef.current

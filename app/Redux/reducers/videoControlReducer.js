@@ -1,4 +1,4 @@
-import { videoControlActions } from '../constants'
+import { videoControlActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     playingId: undefined,

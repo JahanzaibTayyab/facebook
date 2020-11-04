@@ -34,7 +34,7 @@ class GroupPostTool extends Component {
                     <TouchableOpacity activeOpacity={0.5} style={styles.userAvatarWrapper}>
                         <Image source={{ uri: user.avatar_url }} style={styles.userAvatar} ></Image>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={this.onFullPostToolPressHandler.bind(this)} style={styles.postInputWrapper}>
+                    <TouchableOpacity onPress={console.log("Search input")} style={styles.postInputWrapper}>
                         <View style={{ ...styles.postInput, backgroundColor: this.state.inputBgColor }}>
                             <Text>What are you thinking ?</Text>
                         </View>

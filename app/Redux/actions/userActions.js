@@ -1,4 +1,4 @@
-import { userActions } from '../constants'
+import { userActions } from '../../constants'
 import axios from 'axios'
 export const LoginRequest = (username, password) => {
     const taskURI = `/users?username=${username}&password=${password}`

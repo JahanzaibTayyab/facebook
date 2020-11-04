@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
-import { FetchNotificationsRequest } from '../../actions/notificationsActions'
+import { FetchNotificationsRequest } from '../../Redux/actions/notificationsActions'
 import { notificationTypes } from '../../constants'
 import NotificationList from '../../components/NotificationList'
 import VerticalRecommendFriends from '../../components/VerticalRecommendFriends'
 import ExTouchableOpacity from '../../components/ExTouchableOpacity'
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import { navigation } from '../../rootNavigation'
+import { navigation } from '../../../rootNavigation'
 class index extends Component {
     constructor(props) {
         super(props)

@@ -1,4 +1,4 @@
-import { systemImagesActions } from '../constants'
+import { systemImagesActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = []
 const reducer = (state = defaultState, action) => {

@@ -1,4 +1,4 @@
-import { searchingActions } from '../constants'
+import { searchingActions } from '../../constants'
 import { Alert } from 'react-native'
 const defaultState = {
     posts: [],

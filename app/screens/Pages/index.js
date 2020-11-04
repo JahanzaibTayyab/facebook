@@ -5,8 +5,8 @@ import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
 import { STATUSBAR_HEIGHT, SCREEN_WIDTH, pageNavigationTypes } from '../../constants'
 import { connect } from 'react-redux'
-import { FetchPageDetailRequest } from '../../actions/pageDetailActions'
-import { navigation } from '../../rootNavigation'
+import { FetchPageDetailRequest } from '../../Redux/actions/pageDetailActions'
+import { navigation } from '../../../rootNavigation'
 import {
     Home, Introduction, Posts,
     Videos, Photos, Event, Community
